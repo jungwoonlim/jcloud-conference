@@ -1,4 +1,7 @@
 <script lang="ts">
+	import 'bulma/css/bulma.css'
+	import { Svelma } from 'svelma'
+
 	const constraints:object = {
 		audio: true,
 		video: true
@@ -20,10 +23,16 @@
 </script>
 
 <main>
-    <video id="localVideo" autoplay playsinline controls={false}>
-		<track kind="captions">
-	</video>
+	<div>
+		<video id="localVideo" autoplay playsinline controls={false}>
+			<track kind="captions">
+		</video>
+		<Svelma.Button>I am a Button</Svelma.Button>
+	</div>
 </main>
 
 <style>
+	#localVideo {
+		margin: 0 auto;
+	}
 </style>
