@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Video from "./components/Video";
-import { DatePicker } from "antd";
+import Date from "./components/Date";
 
 class App extends Component {
   playVideoFromCamera = async () => {
@@ -16,15 +16,15 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.playVideoFromCamera();
+    // this.playVideoFromCamera();
   }
 
   render() {
     return (
       <section className="container">
         <div className="App">
-          <Video />
-          <DatePicker />
+          {/* <Video /> */}
+          <Date />
         </div>
       </section>
     );
