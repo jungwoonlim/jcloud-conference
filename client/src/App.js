@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Video from "./components/Video";
+import { DatePicker } from "antd";
 
 class App extends Component {
   playVideoFromCamera = async () => {
@@ -23,6 +24,7 @@ class App extends Component {
       <section className="container">
         <div className="App">
           <Video />
+          <DatePicker />
         </div>
       </section>
     );
