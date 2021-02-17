@@ -7,17 +7,20 @@ class Client extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userId: "been",
+      userid: "been", // userid"been"
     };
   }
 
-  // componentWillMount() {
-  //   socket.emit("roomjoin", this.state.userid); // been이라는 방 만들기
-  // }
   onclick = (e) => {
     const str = "hwi"; //버튼을 클릭하면
-    socket.emit("msgToServer", str); //서버의 소켓 alert이벤트에 "hwi"를 보낸다
+    socket.emit("alert", str); //서버의 소켓 alert이벤트에 "hwi"를 보낸다
+    console.log(str);
   };
+
+  componentDidMount() {
+    // this.onclick();
+    socket.emit("roomjoin", this.state.userid); // been이라는 방 만들기
+  }
 
   render() {
     return (

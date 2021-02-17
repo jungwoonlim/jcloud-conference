@@ -21,10 +21,10 @@ export class AppGateway
     // this.server.emit('msgToClient', payload);
   }
 
-  @SubscribeMessage('send')
-  handleMessageTest(client: Socket, payload: string): void {
+  @SubscribeMessage('alert')
+  handleMessageTest(client: Socket, touserid: string): void {
     this.logger.log('send!');
-    this.server.emit('get', payload);
+    this.server.emit('heejewake', touserid);
   }
 
   afterInit(server: Server) {
