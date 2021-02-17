@@ -1,8 +1,8 @@
 import { message } from "antd";
 import React, { Component } from "react";
-import io from "socket.io-client";
+// import io from "socket.io-client";
 
-const socket = io("http://localhost:4000", { transports: ["websocket"] });
+// const socket = io("http://localhost:4000", { transports: ["websocket"] });
 
 class Client2 extends Component {
   constructor(props) {

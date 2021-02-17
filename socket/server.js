@@ -15,19 +15,23 @@ app.get("/", (req, res) => {
 });
 //////////////////////////////////////////////////////////////
 
+let count = 0;
 io.on("connection", function (socket) {
   console.log("소켓 접속 완료");
+  count++;
 
-  socket.on("roomjoin", (userid) => {
-    //roomjoin 이벤트명으로 데이터받기 //socket.on
-    console.log(userid);
-    socket.join(userid); //userid로 방 만들기
+  socket.on("conference message", (message) => {
+    if (count === 1) {
+      socket.emit("create conference");
+    } else {
+      socket.emit("join conference");
+    }
   });
 
-  socket.on("alert", (touserid) => {
-    //alet 이벤트로 데이터 받기
-    io.to(touserid).emit("heejewake", touserid); //touserid: 클라이언트1이 보낸데이터"hwi"
-  }); //heejewake이벤트: hwi 에게 메시지 hwi를 보낸다
+  socket.on("disconnect", () => {
+    count--;
+    console.log("소켓 접속 종료");
+  });
 });
 
 http.listen(port, () => {
