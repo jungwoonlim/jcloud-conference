@@ -17,7 +17,14 @@ export class AppGateway
 
   @SubscribeMessage('msgToServer')
   handleMessage(client: Socket, payload: string): void {
-    this.server.emit('msgToClient', payload);
+    this.logger.log('send!');
+    // this.server.emit('msgToClient', payload);
+  }
+
+  @SubscribeMessage('send')
+  handleMessageTest(client: Socket, payload: string): void {
+    this.logger.log('send!');
+    this.server.emit('get', payload);
   }
 
   afterInit(server: Server) {
@@ -25,10 +32,10 @@ export class AppGateway
   }
 
   handleDisconnect(client: Socket) {
-    this.logger.log(`Client disconnected: ${client.id}`);
+    // this.logger.log(`Client disconnected: ${client.id}`);
   }
 
   handleConnection(client: Socket, ...args: any[]) {
-    this.logger.log(`Client connected: ${client.id}`);
+    // this.logger.log(`Client connected: ${client.id}`);
   }
 }
