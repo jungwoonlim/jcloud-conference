@@ -11,9 +11,11 @@ app.use(bodyParser.json());
 
 app.use(cors({ origin: "http://localhost:3000/" }));
 app.get("/", (req, res) => {
-  res.send("hjsd");
+  res.send("Socket.io server");
 });
 //////////////////////////////////////////////////////////////
+
+var numClients = 0;
 
 io.on("connection", function (socket) {
   console.log("socket connect");
@@ -33,10 +35,13 @@ io.on("connection", function (socket) {
   socket.on("create or join", function (room) {
     log("Received request to create or join room " + room);
 
-    var clientsInRoom = io.sockets.adapter.rooms[room];
-    var numClients = clientsInRoom
-      ? Object.keys(clientsInRoom.sockets).length
-      : 0;
+    // var clientsInRoom = io.sockets.adapter.rooms[room];
+    // var numClients = clientsInRoom
+    //   ? Object.keys(clientsInRoom.sockets).length
+    //   : 0;
+    numClients++;
+    console.log(numClients);
+
     log("Room " + room + " now has " + numClients + " client(s)");
 
     if (numClients === 0) {
@@ -68,6 +73,10 @@ io.on("connection", function (socket) {
 
   socket.on("bye", function () {
     console.log("received bye");
+  });
+
+  socket.on("disconnect", () => {
+    numClients--;
   });
 });
 
