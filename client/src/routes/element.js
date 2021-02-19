@@ -97,15 +97,15 @@ socket.on("message", function (message) {
 var localVideo = document.getElementById("localVideo");
 var remoteVideo = document.getElementById("remoteVideo");
 
-// navigator.mediaDevices
-//   .getUserMedia({
-//     audio: false,
-//     video: true,
-//   })
-//   .then(gotStream)
-//   .catch(function (e) {
-//     alert("getUserMedia() error: " + e.name);
-//   });
+navigator.mediaDevices
+  .getUserMedia({
+    audio: false,
+    video: true,
+  })
+  .then(gotStream)
+  .catch(function (e) {
+    alert("getUserMedia() error: " + e.name);
+  });
 
 function gotStream(stream) {
   console.log("Adding local stream.");
