@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Connect from "../components/Connect";
 import Date from "../components/Date";
 
 const Container = styled.section`
@@ -17,6 +18,7 @@ class App extends Component {
     return (
       <Container>
         <TitleText h1={12}>Welcome to Video Conference</TitleText>
+        <Connect />
         <Date />
       </Container>
     );
