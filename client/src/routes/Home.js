@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Connect from "../components/Connect";
 import Date from "../components/Date";
+import { Typography } from "antd";
+const { Title } = Typography;
 
 const Container = styled.section`
   background-color: #f2f2f2;
@@ -17,7 +19,9 @@ class App extends Component {
   render() {
     return (
       <Container>
-        <TitleText h1={12}>Welcome to Video Conference</TitleText>
+        <Title level={2} strong>
+          Welcome to Video Conference
+        </Title>
         <Connect />
         <Date />
       </Container>
