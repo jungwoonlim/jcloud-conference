@@ -6,6 +6,7 @@ const FooterStyle = {
   position: "absolute",
   textAlign: "center",
   width: "100%",
+  height: "5vh",
   bottom: "0px",
 };
 

@@ -1,29 +1,25 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Connect from "../components/Connect";
-import Date from "../components/Date";
-import { Typography } from "antd";
-const { Title } = Typography;
+import MainBoard from "./MainBoard";
+import FooterLayout from "../layout/FooterLayout";
+import { Carousel } from "antd";
 
-const Container = styled.section`
-  background-color: #f2f2f2;
-  display: flex;
-  flex-direction: column;
-`;
-
-const TitleText = styled.h1`
-  text-align: center;
+const Container = styled.div`
+  height: 100vh;
+  background-color: white;
 `;
 
 class App extends Component {
   render() {
     return (
       <Container>
-        <Title level={2} strong>
-          Welcome to Video Conference
-        </Title>
-        <Connect />
-        <Date />
+        <Carousel effect="fade" autoplay>
+          <MainBoard />
+          <MainBoard />
+          <MainBoard />
+          <MainBoard />
+        </Carousel>
+        <FooterLayout />
       </Container>
     );
   }
