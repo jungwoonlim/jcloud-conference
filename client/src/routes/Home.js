@@ -1,24 +1,32 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import MainBoard from "./MainBoard";
 import FooterLayout from "../layout/FooterLayout";
-import { Carousel } from "antd";
+import Connect from "../components/Connect";
+import backgroundImage from "../images/background-image.jpg";
 
 const Container = styled.div`
   height: 100vh;
   background-color: white;
+  text-align: center;
+`;
+
+const Title = styled.p`
+  font-size: 80px;
+  font-family: cursive;
+  margin-top: 10%;
+`;
+
+const ConferenceImage = styled.img`
+  width: 600px;
 `;
 
 class App extends Component {
   render() {
     return (
       <Container>
-        <Carousel effect="fade" autoplay>
-          <MainBoard />
-          <MainBoard />
-          <MainBoard />
-          <MainBoard />
-        </Carousel>
+        <Title>Welcome to Video Conference</Title>
+        <Connect />
+        <ConferenceImage src={backgroundImage} />
         <FooterLayout />
       </Container>
     );
