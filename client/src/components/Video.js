@@ -7,11 +7,13 @@ const LocalVideo = styled.video`
   right: 10px;
   width: 300px;
   height: auto;
+  background: red;
 `;
 
 const RemoteVideo = styled.video`
   width: 80%;
   height: auto;
+  background: red;
 `;
 
 function Video() {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Video from "../components/Video";
+import VideoLayout from "./VideoLayout";
 import io from "socket.io-client";
 
 class Conference extends Component {
@@ -261,12 +261,7 @@ class Conference extends Component {
   }
 
   render() {
-    return (
-      <section className="container">
-        <h1>Conference Room</h1>
-        <Video />
-      </section>
-    );
+    return <VideoLayout />;
   }
 }
 
