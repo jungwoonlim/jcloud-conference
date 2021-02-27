@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import VideoLayout from "./VideoLayout";
+import VideoLayout from "../components/VideoLayout";
 import io from "socket.io-client";
 
 class Conference extends Component {

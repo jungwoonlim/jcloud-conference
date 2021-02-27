@@ -4,13 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "antd": "^4.12.3",
+    "@craco/craco": "^6.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -30,7 +30,11 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.3",
+    "autoprefixer": "^9",
     "http-proxy-middleware": "^1.0.6",
-    "socket.io-client": "^3.1.1"
+    "postcss": "^7",
+    "socket.io-client": "^3.1.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }

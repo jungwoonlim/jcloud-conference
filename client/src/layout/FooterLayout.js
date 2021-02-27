@@ -1,6 +1,4 @@
-import react from "react";
-import { Layout } from "antd";
-const { Footer } = Layout;
+import react, { Component } from "react";
 
 const FooterStyle = {
   position: "absolute",
@@ -10,10 +8,12 @@ const FooterStyle = {
   bottom: "0px",
 };
 
-class FooterLayout extends react.Component {
+class FooterLayout extends Component {
   render() {
     return (
-      <Footer style={FooterStyle}>jCloud's Conference Website ©2021</Footer>
+      <>
+        <div>jCloud's Conference Website ©2021</div>
+      </>
     );
   }
 }

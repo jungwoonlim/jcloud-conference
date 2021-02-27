@@ -17,6 +17,7 @@ const Title = styled.p`
 `;
 
 const ConferenceImage = styled.img`
+  margin: 0 auto;
   width: 600px;
 `;
 

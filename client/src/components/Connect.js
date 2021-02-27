@@ -1,7 +1,6 @@
 import react, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Button } from "antd";
 
 const ConnectBoard = styled.div`
   margin: 0 auto;
@@ -15,25 +14,16 @@ const ConnectText = styled.p`
 `;
 
 class Connect extends Component {
-  state = {
-    size: "large",
-  };
-
-  handleSizeChange = (e) => {
-    this.setState({ size: e.target.value });
-  };
-
   render() {
-    const { size } = this.state;
     return (
       <ConnectBoard>
         <ConnectText>
           Do you want to start a video conference? <br />
           Click the button below to get started.
         </ConnectText>
-        <Button type="dashed" size={size}>
+        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
           <Link to="/conference">Connect Conference</Link>
-        </Button>
+        </button>
       </ConnectBoard>
     );
   }
