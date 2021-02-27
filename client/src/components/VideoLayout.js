@@ -1,21 +1,19 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import HeaderLayout from "../layout/HeaderLayout";
-import FooterLayout from "../layout/FooterLayout";
-import Video from "../components/Video";
+import Video from "./Video";
 
-const SiderLayout = styled.div`
-  background-color: red;
-  flex: 0 0 200px;
+const VideoLayoutContainer = styled.div`
+  height: 100%;
 `;
 
 class VideoLayout extends Component {
   render() {
     return (
-      <div>
+      <VideoLayoutContainer>
         <HeaderLayout />
-        <h1>hello</h1>
-      </div>
+        <Video />
+      </VideoLayoutContainer>
     );
   }
 }

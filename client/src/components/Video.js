@@ -1,38 +1,63 @@
 import React from "react";
 import styled from "styled-components";
 
+const MainVideoContainer = styled.div`
+  padding: 5%;
+  width: 100%;
+  height: 94%;
+  background-color: #374151;
+`;
+
+const LocalVideoContainer = styled.div`
+  //
+`;
+
+const RemoteVideoContainer = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+`;
+
 const LocalVideo = styled.video`
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 8%;
+  right: 8%;
   width: 300px;
-  height: auto;
-  background: red;
+  height: 300px;
+  border-radius: 50px;
+  object-fit: cover;
 `;
 
 const RemoteVideo = styled.video`
-  width: 80%;
-  height: auto;
-  background: red;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  object-fit: cover;
 `;
 
 function Video() {
   return (
-    <div className="video_container" id="videos">
-      <LocalVideo
-        id="localVideo"
-        autoPlay
-        playsInline
-        controls={false}
-        muted={true}
-      ></LocalVideo>
-      <RemoteVideo
-        id="remoteVideo"
-        autoPlay
-        playsInline
-        controls={false}
-      ></RemoteVideo>
-    </div>
+    <MainVideoContainer>
+      <RemoteVideoContainer className="video_container " id="videos">
+        <RemoteVideo
+          id="remoteVideo"
+          className="ring"
+          autoPlay
+          playsInline
+          controls={false}
+        ></RemoteVideo>
+      </RemoteVideoContainer>
+      <LocalVideoContainer>
+        <LocalVideo
+          id="localVideo"
+          className="ring"
+          autoPlay
+          playsInline
+          controls={false}
+          muted={true}
+        ></LocalVideo>
+      </LocalVideoContainer>
+    </MainVideoContainer>
   );
 }
 
