@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Header = styled.div`
-  padding: 20px;
+  padding: 5px 20px;
   height: 6%;
+  min-height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -12,7 +13,7 @@ const Header = styled.div`
 `;
 
 const Button = styled.button`
-  // outline: none !important;
+  height: 100%;
   cursor: pointer;
 `;
 
