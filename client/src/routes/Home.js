@@ -18,7 +18,7 @@ const Title = styled.p`
 
 const ConferenceImage = styled.img`
   margin: 0 auto;
-  width: 600px;
+  width: 500px;
 `;
 
 class App extends Component {
