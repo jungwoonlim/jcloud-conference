@@ -1,4 +1,3 @@
 # jcloud-conference
-Create Video conference with react, node
+Create Video conference with react, socket.io, tailwind.
 
-using nest.js & svelte
